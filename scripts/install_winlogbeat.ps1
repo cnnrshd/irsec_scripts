@@ -1,3 +1,5 @@
+# Bypass execution policy for this process
+Set-ExecutionPolicy Bypass -Scope Process
 $winlogbeatInstalled = Get-Service -Name winlogbeat -ErrorAction SilentlyContinue
 $destPath = "C:\Program Files\Winlogbeat"
 Import-Module BitsTransfer

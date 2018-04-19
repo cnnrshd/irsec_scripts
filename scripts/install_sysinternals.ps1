@@ -1,3 +1,5 @@
+# Bypass execution policy for this process
+Set-ExecutionPolicy Bypass -Scope Process
 Import-Module BitsTransfer
 $sysmonInstalled = Get-Service -Name Sysmon -ErrorAction SilentlyContinue
 $sysmon64Installed = Get-Service -Name Sysmon64 -ErrorAction SilentlyContinue

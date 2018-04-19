@@ -1,3 +1,5 @@
+# Bypass execution policy for this process
+Set-ExecutionPolicy Bypass -Scope Process
 $packetbeatInstalled = Get-Service -Name packetbeat -ErrorAction SilentlyContinue
 $destPath = "C:\Program Files\Packbeat"
 Import-Module BitsTransfer

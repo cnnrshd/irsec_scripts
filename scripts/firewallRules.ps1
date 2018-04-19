@@ -1,8 +1,19 @@
+# Bypass execution policy for this process
+Set-ExecutionPolicy Bypass -Scope Process
+# Delete current firewall rules
+Remove-NetFirewallRule -DisplayName "*"
+# Make sure the firewall is startup type automatic
+Set-Service -Name "MpsSvc" -StartupType Automatic
+# Start firewall
+Start-Service -Name "MpsSvc"
+# Enable all profiles
+Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled True
 # Allow BITS in/out on HTTP
 New-NetFirewallRule -DisplayName ALLOWINBOUND80TCPBITS -Protocol TCP -LocalPort 80 -Service BITS -Action Allow -Enabled True -Direction Inbound 
 New-NetFirewallRule -DisplayName ALLOWOUTBOUND80TCPBITS -Protocol TCP -LocalPort 80 -Service BITS -Action Allow -Enabled True -Direction Outbound 
 New-NetFirewallRule -DisplayName ALLOWINBOUNDTCPBITS -Protocol TCP -RemotePort 80 -Service BITS -Action Allow -Enabled True -Direction Inbound 
 New-NetFirewallRule -DisplayName ALLOWOUTBOUNDTCPBITS -Protocol TCP -RemotePort 80 -Service BITS -Action Allow -Enabled True -Direction Outbound 
+# Required for AD function
 New-NetFirewallRule -DisplayName ALLOWINBOUND88UDPlsass.exeKdc -Program C:\Windows\System32\lsass.exe  -Protocol UDP -LocalPort 88 -Service Kdc -Action Allow -Enabled True -Direction Inbound 
 New-NetFirewallRule -DisplayName ALLOWINBOUND135UDPlsass.exeNTDS -Program C:\Windows\System32\lsass.exe  -Protocol UDP -LocalPort 135 -Service NTDS -Action Allow -Enabled True -Direction Inbound 
 New-NetFirewallRule -DisplayName ALLOWINBOUND135TCPlsass.exeNTDS -Program C:\Windows\System32\lsass.exe  -Protocol TCP -LocalPort 135 -Service NTDS -Action Allow -Enabled True -Direction Inbound 
