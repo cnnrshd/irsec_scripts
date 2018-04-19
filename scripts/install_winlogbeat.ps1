@@ -6,7 +6,7 @@ if (-Not ($winlogbeatInstalled.length -gt 0)) {
     $out = "C:tempDL\winlogbeat-6.2.4-windows-x86_64.zip"
     Start-BitsTransfer -Source $url -Destination $out
     Expand-Archive -LiteralPath $out -DestinationPath $destPath
-    powershell.exe Set-ExecutionPolicy Unrestricted ($destPath + "\install-service-winlogbeat.ps1")
+    powershell.exe ($destPath + "\install-service-winlogbeat.ps1")
 }
 # delete current config
 $configDest = ($destPath + "\winlogbeat.yml")
