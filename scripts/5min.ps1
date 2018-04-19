@@ -27,10 +27,10 @@ $winbeatOUT = "C:\scripts\install_winlogbeat.ps1"
 Start-BitsTransfer -Source $winbeatURL -Destination $winbeatOUT
 powershell.exe $winbeatOUT
 # Grab/Run Filebeat install script
-$filebeatURL = "https://raw.githubusercontent.com/cnnrshd/irsec_scripts/master/scripts/install_filebeat.ps1?token=AiUZH61XZugJNVG3GQcuRHhkJbHTvR1Vks5a4S4ZwA%3D%3D"
-$filebeatOUT = "C:\scripts\install_filebeat.ps1"
-Start-BitsTransfer -Source $filebeatURL -Destination $filebeatOUT
-powershell.exe $filebeatOUT
+#$filebeatURL = "https://raw.githubusercontent.com/cnnrshd/irsec_scripts/master/scripts/install_filebeat.ps1?token=AiUZH61XZugJNVG3GQcuRHhkJbHTvR1Vks5a4S4ZwA%3D%3D"
+#$filebeatOUT = "C:\scripts\install_filebeat.ps1"
+#Start-BitsTransfer -Source $filebeatURL -Destination $filebeatOUT
+#powershell.exe $filebeatOUT
 # Grab/Run Sysinternals/sysmon install script
 $sysintURL = "https://raw.githubusercontent.com/cnnrshd/irsec_scripts/master/scripts/install_sysinternals.ps1?token=AiUZHwTTdqOVOZmn-IoxYz1scyQzH3qEks5a4S42wA%3D%3D"
 $sysintOUT = "C:\scripts\install_sysinternals.ps1"
