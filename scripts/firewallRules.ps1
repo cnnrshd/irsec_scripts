@@ -13,7 +13,7 @@ New-NetFirewallRule -DisplayName ALLOWINBOUND445UDPntfrs.exeNtFrs -Program C:\Wi
 New-NetFirewallRule -DisplayName ALLOWINBOUND445TCPntfrs.exeNtFrs  -Program C:\Windows\System32\ntfrs.exe  -Protocol TCP -LocalPort 445 -Service NtFrs  -Action Allow -Enabled True -Direction Inbound 
 New-NetFirewallRule -DisplayName ALLOWINBOUND464TCPlsass.exe -Program C:\Windows\System32\lsass.exe  -Protocol TCP -LocalPort 464 -Action Allow -Enabled True -Direction Inbound 
 New-NetFirewallRule -DisplayName ALLOWINBOUND464UDPlsass.exe -Program C:\Windows\System32\lsass.exe  -Protocol UDP -LocalPort 464 -Action Allow -Enabled True -Direction Inbound 
-New-NetFirewallRule -DisplayName ALLOWINBOUND3268,3269TCP -Protocol TCP -LocalPort 3268,3269 -Action Allow -Enabled True -Direction Inbound 
+New-NetFirewallRule -DisplayName ALLOWINBOUNDTCP -Protocol TCP -LocalPort 3268,3269 -Action Allow -Enabled True -Direction Inbound 
 New-NetFirewallRule -DisplayName ALLOWINBOUND53TCPdns.exe -Program C:\Windows\System32\dns.exe  -Protocol TCP -LocalPort 53 -Action Allow -Enabled True -Direction Inbound 
 New-NetFirewallRule -DisplayName ALLOWOUTBOUND53TCPdns.exe -Program C:\Windows\System32\dns.exe  -Protocol TCP -LocalPort 53 -Action Allow -Enabled True -Direction Outbound 
 New-NetFirewallRule -DisplayName ALLOWINBOUND53UDPdns.exe -Program C:\Windows\System32\dns.exe  -Protocol UDP -LocalPort 53 -Action Allow -Enabled True -Direction Inbound 

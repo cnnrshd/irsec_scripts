@@ -3,7 +3,7 @@ $destPath = "C:\Program Files\Winlogbeat"
 Import-Module BitsTransfer
 if (-Not ($winlogbeatInstalled.length -gt 0)) {
     $url = "https://artifacts.elastic.co/downloads/beats/winlogbeat/winlogbeat-6.2.4-windows-x86_64.zip"
-    $out = ([System.Environment]::GetFolderPath("Downloads") + "winlogbeat-6.2.4-windows-x86_64.zip")
+    $out = "C:tempDL\winlogbeat-6.2.4-windows-x86_64.zip"
     Start-BitsTransfer -Source $url -Destination $out
     Expand-Archive -LiteralPath $out -DestinationPath $destPath
     powershell.exe Set-ExecutionPolicy Unrestricted ($destPath + "\install-service-winlogbeat.ps1")
