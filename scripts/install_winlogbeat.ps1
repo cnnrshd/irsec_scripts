@@ -12,7 +12,7 @@ if (-Not ($winlogbeatInstalled.length -gt 0)) {
 $configDest = ($destPath + "\winlogbeat.yml")
 Remove-Item $configDest
 # download config to correct directory
-$configURL = "https://gist.githubusercontent.com/cnnrshd/17870aa8e25b3a834b8cd08e24c0ccd1/raw/fd809662fc0e35bbaa8798e7df409ecb895bd874/winlogbeat.yml"
+$configURL = "https://raw.githubusercontent.com/cnnrshd/irsec_scripts/master/configs/winlogbeat.yml?token=AiUZH97oSRUw3lK9a49YtTIbfQ3fUxi7ks5a4S6MwA%3D%3D"
 Start-BitsTransfer -Source $configURL -Destination $configDest
 # restart service
 Restart-Service winlogbeat

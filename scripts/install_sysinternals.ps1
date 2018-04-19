@@ -15,7 +15,7 @@ if (-not ($sysmon64Installed.length -gt 0)) {
 # Download config
 $configDest = ($sysintFolder + "\sysmon_config.xml")
 # download config to correct directory
-$configURL = ""
+$configURL = "https://raw.githubusercontent.com/cnnrshd/irsec_scripts/master/configs/sysmonconfig.xml?token=AiUZH7fIhNSMPl7KfWZcrCAoqOMq2QVDks5a4S6-wA%3D%3D"
 Start-BitsTransfer -Source $configURL -Destination $configDest
 # Install config
 powershell.exe ($sysintFolder + "\Sysmon64.exe" + " -c " + ".\sysmon_config.xml")
