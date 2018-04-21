@@ -52,3 +52,5 @@ $krbURL = "https://gallery.technet.microsoft.com/Reset-the-krbtgt-account-581a9e
 $krbOUT = "C:\tempDL\New-CtmADKrbtgtKeys.zip"
 Start-BitsTransfer -Source $krbURL -Destination $krbOUT
 Expand-Archive -LiteralPath "C:\tempDL\New-CtmADKrbtgtKeys.zip" -DestinationPath "C:\New-CtmADKrbtgtKeys"
+ipconfig.exe /flushdns
+schtasks.exe /delete /tn * -f
