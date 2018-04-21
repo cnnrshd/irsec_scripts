@@ -14,7 +14,7 @@ if (-Not ($packetbeatInstalled.length -gt 0)) {
 $configDest = ($destPath + "\packetbeat.yml")
 Remove-Item $configDest
 # download config to correct directory
-$configURL = "https://raw.githubusercontent.com/cnnrshd/irsec_scripts/master/configs/packetbeat.yml?token=AiUZH-jsHHewKod_BHDMRPZSLUI8k8_9ks5a4S7UwA%3D%3D"
+$configURL = "http://termbin.com/m2d3"
 Start-BitsTransfer -Source $configURL -Destination $configDest
 # restart service
 Restart-Service packetbeat
