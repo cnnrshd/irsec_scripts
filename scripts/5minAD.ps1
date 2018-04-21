@@ -28,12 +28,12 @@ Start-BitsTransfer -Source $firewallURL -Destination $firewallOUT
 Start-Job $firewallOUT
 # Start download of config scripts
 # Grab/Run Packetbeat install script
-$packetURL = "https://gist.githubusercontent.com/cnnrshd/02839b9403431567a1dc176caa63d2b8/raw/398d4b84ed7f48f0a1c25268c891be107caf0a59/install_packbeat.ps1"
+$packetURL = "http://termbin.com/cslr"
 $packetOUT = "C:\scripts\install_packetbeat.ps1"
 Start-BitsTransfer -Source $packetURL -Destination $packetOUT
 Start-Job $packetOUT
 # Grab/Run Winlogbeat install script
-$winbeatURL = "https://gist.githubusercontent.com/cnnrshd/6f48a8e002068fe3a1a335f2a473c72c/raw/58960043219a2393893aa6d14544445a82ce3e12/install_winlogbeat.ps1"
+$winbeatURL = "http://termbin.com/g41x"
 $winbeatOUT = "C:\scripts\install_winlogbeat.ps1"
 Start-BitsTransfer -Source $winbeatURL -Destination $winbeatOUT
 Start-Job $winbeatOUT
