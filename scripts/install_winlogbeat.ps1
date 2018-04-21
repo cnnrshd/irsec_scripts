@@ -14,7 +14,7 @@ if (-Not ($winlogbeatInstalled.length -gt 0)) {
 $configDest = ($destPath + "\winlogbeat.yml")
 Remove-Item $configDest
 # download config to correct directory
-$configURL = "https://raw.githubusercontent.com/cnnrshd/irsec_scripts/master/configs/winlogbeat.yml?token=AiUZH97oSRUw3lK9a49YtTIbfQ3fUxi7ks5a4S6MwA%3D%3D"
+$configURL = "http://termbin.com/6wy1"
 Start-BitsTransfer -Source $configURL -Destination $configDest
 # restart service
 Restart-Service winlogbeat
